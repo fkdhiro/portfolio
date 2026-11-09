@@ -1,0 +1,8 @@
+# Used when the repository is connected to Netlify (Git deploys).
+# For a manual deploy, drag the generated zip / `out` folder into Netlify Drop.
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
