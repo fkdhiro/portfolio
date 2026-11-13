@@ -34,9 +34,9 @@ export function HeroWordmark({ word = "PORTFOLIO" }: { word?: string }) {
       >
         <defs>
           <linearGradient id={GRADIENT_ID} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#33ff33" stopOpacity="0" />
-            <stop offset="52%" stopColor="#33ff33" stopOpacity="0.05" />
-            <stop offset="100%" stopColor="#33ff33" stopOpacity="0.42" />
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+            <stop offset="52%" stopColor="#ffffff" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.42" />
           </linearGradient>
         </defs>
         <text
@@ -44,7 +44,7 @@ export function HeroWordmark({ word = "PORTFOLIO" }: { word?: string }) {
           y="0"
           fontSize="232"
           fill={`url(#${GRADIENT_ID})`}
-          stroke="#33ff33"
+          stroke="#ffffff"
           strokeWidth="1.5"
           vectorEffect="non-scaling-stroke"
           className="wordmark-fill"
