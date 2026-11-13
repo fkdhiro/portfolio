@@ -39,7 +39,7 @@ export function PortraitPanel({ portrait }: { portrait: Portrait }) {
           loading="eager"
           fetchPriority="high"
           sizes="(min-width: 1200px) 30vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover object-[50%_32%]"
+          className="object-cover object-[50%_32%] grayscale contrast-125 mix-blend-luminosity"
         />
       ) : (
         <div className="absolute inset-0" aria-hidden="true">
@@ -70,7 +70,7 @@ export function PortraitPanel({ portrait }: { portrait: Portrait }) {
         </div>
       )}
 
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(9,8,11,0.6)_0%,transparent_16%,transparent_55%,rgba(9,8,11,0.85)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(9,8,11,0.85)_100%)]" />
 
       <Corner className="left-3 top-3 border-l border-t" />
       <Corner className="right-3 top-3 border-r border-t" />
