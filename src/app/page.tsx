@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <a
         href="#main"
-        className="micro sr-only z-[60] bg-red px-3 py-2 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        className="micro sr-only z-[60] bg-red px-3 py-2 text-bg focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
         Pular para o conteúdo
       </a>

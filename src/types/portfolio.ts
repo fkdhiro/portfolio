@@ -81,7 +81,7 @@ export type About = {
     eyebrow: string;
     title: string;
     items: Experience[];
-    education: Education;
+    education: Education[];
   };
   skills: {
     eyebrow: string;

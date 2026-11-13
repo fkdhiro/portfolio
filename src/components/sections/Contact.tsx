@@ -16,7 +16,7 @@ export function Contact({ contact }: { contact: ContactType }) {
       className="relative overflow-hidden pb-24 pt-24 md:pb-32 md:pt-32"
     >
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[radial-gradient(ellipse_55%_60%_at_50%_100%,rgba(255,59,69,0.10),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[radial-gradient(ellipse_55%_60%_at_50%_100%,rgba(51,255,51,0.10),transparent_70%)]"
         aria-hidden="true"
       />
       <div className="shell relative">

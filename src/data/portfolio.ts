@@ -10,8 +10,7 @@ import type { Portfolio } from "@/types/portfolio";
  *  - No internal project/client names (except Online Queue).
  *  - AWS: only ECR, ECS and S3. Java and Machine Learning listed as intermediate.
  *  - Social links stay `null` (hidden) until confirmed profile URLs exist.
- *  - Portrait: `src: null` renders the abstract panel until a real photo exists
- *    (replace assets/portrait-source.png, run `npm run images`, set the src).
+ *  - Portrait: real photo (assets/portrait-source.png → `npm run images`).
  * ─────────────────────────────────────────────────────────────────────────────
  */
 export const portfolio: Portfolio = {
@@ -55,7 +54,7 @@ export const portfolio: Portfolio = {
     primaryCta: { label: "Entre em contato", href: "#contact" },
     secondaryCta: { label: "Explorar projetos", href: "#flagships" },
     portrait: {
-      src: null,
+      src: "/images/portrait.webp",
       alt: "Retrato de Willian Hiroshi",
       caption: { title: "Willian Hiroshi", subtitle: "Engenheiro Full Stack" },
     },
@@ -160,21 +159,34 @@ export const portfolio: Portfolio = {
           period: "nov/2022 — out/2023",
           summary:
             "Aplicações web e desktop para clientes com MERN (MongoDB, Express, React, Node.js) e Electron.js.",
-          highlights: [],
+          highlights: [
+            "Backends escaláveis e APIs em Node.js/Express com MongoDB",
+            "Interfaces responsivas em React e apps desktop com Electron.js",
+          ],
         },
         {
           company: "Prefeitura Municipal de Ibiporã",
           role: "Estagiário de TI",
           period: "jan/2022 — nov/2022",
           summary: "Suporte de TI ao município: redes, hardware, software e sistemas administrativos.",
-          highlights: [],
+          highlights: [
+            "Suporte a redes e hardware",
+            "Suporte a software e sistemas administrativos do município",
+          ],
         },
       ],
-      education: {
-        course: "Bacharelado em Engenharia de Software",
-        institution: "UTFPR",
-        period: "2020 — 2025",
-      },
+      education: [
+        {
+          course: "Bacharelado em Engenharia de Software",
+          institution: "UTFPR",
+          period: "2020 — 2025",
+        },
+        {
+          course: "Técnico em Redes de Computadores",
+          institution: "SENAI/SC",
+          period: "2016 — 2018",
+        },
+      ],
     },
     skills: {
       eyebrow: "Tecnologias",
@@ -437,8 +449,6 @@ export const portfolio: Portfolio = {
     socials: [
       { platform: "github", label: "GitHub", href: "https://github.com/fkdhiro" },
       { platform: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/w-hiroshi" },
-      { platform: "x", label: "X", href: null },
-      { platform: "instagram", label: "Instagram", href: null },
     ],
   },
 

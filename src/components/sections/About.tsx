@@ -66,12 +66,18 @@ export function About({ about }: { about: AboutType }) {
               <Reveal delay={0.1}>
                 <div data-cursor-target="education" className="border border-line bg-surface p-5">
                   <p className="micro text-[10px] text-dim">Formação</p>
-                  <p className="mt-2 text-[16px] font-bold tracking-[-0.01em] text-ink">{experience.education.course}</p>
-                  <p className="mt-1 text-[13px] text-mute">
-                    {experience.education.institution}
-                    <span className="mx-2 text-dim">·</span>
-                    <span className="font-mono text-[12px]">{experience.education.period}</span>
-                  </p>
+                  <ul className="flex flex-col">
+                    {experience.education.map((edu, i) => (
+                      <li key={edu.course} className={i > 0 ? "mt-4 border-t border-line pt-4" : "mt-2"}>
+                        <p className="text-[16px] font-bold tracking-[-0.01em] text-ink">{edu.course}</p>
+                        <p className="mt-1 text-[13px] text-mute">
+                          {edu.institution}
+                          <span className="mx-2 text-dim">·</span>
+                          <span className="font-mono text-[12px]">{edu.period}</span>
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             </div>

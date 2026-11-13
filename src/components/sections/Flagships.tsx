@@ -27,7 +27,7 @@ export function Flagships({ flagships }: { flagships: FlagshipsType }) {
         <Reveal className="mt-14 md:mt-20">
           <article className="relative overflow-hidden border border-line-red bg-[#0c0a0d] p-5 md:p-10 xl:p-14">
             <div
-              className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[640px] bg-[radial-gradient(closest-side,rgba(255,59,69,0.09),transparent)]"
+              className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[640px] bg-[radial-gradient(closest-side,rgba(51,255,51,0.09),transparent)]"
               aria-hidden="true"
             />
 

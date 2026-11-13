@@ -58,7 +58,7 @@ export function CopyEmailButton({ email, label, copiedLabel, errorLabel }: CopyE
         type="button"
         data-cursor-target="copy"
         onClick={onClick}
-        className="group inline-flex min-w-[16rem] items-center justify-center gap-3 bg-red px-6 py-4 text-[14px] font-semibold tracking-[-0.005em] text-white transition-colors hover:bg-red-deep"
+        className="group inline-flex min-w-[16rem] items-center justify-center gap-3 bg-red px-6 py-4 text-[14px] font-semibold tracking-[-0.005em] text-bg transition-colors hover:bg-red-deep"
       >
         <Icon size={16} strokeWidth={2} aria-hidden="true" />
         <span>{text}</span>

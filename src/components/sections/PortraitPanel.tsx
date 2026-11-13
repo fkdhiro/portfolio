@@ -21,7 +21,7 @@ const LINKS: [number, number][] = [
 ];
 
 /**
- * Editorial red/black portrait panel. Without a real photo it shows an
+ * Editorial green/black portrait panel. Without a real photo it shows an
  * abstract distributed-system topology — never a stock face.
  */
 export function PortraitPanel({ portrait }: { portrait: Portrait }) {
@@ -29,7 +29,7 @@ export function PortraitPanel({ portrait }: { portrait: Portrait }) {
     <figure
       data-cursor-target="portrait"
       data-cursor-intro="portrait"
-      className="group relative aspect-[4/5] w-full overflow-hidden border border-line-red bg-[linear-gradient(180deg,#ff3b45_0%,#c4161f_38%,#3a0a10_72%,#09080b_100%)] xl:aspect-[5/6]"
+      className="group relative aspect-[4/5] w-full overflow-hidden border border-line-red bg-[linear-gradient(180deg,#33ff33_0%,#1a8c1a_38%,#0a2e0a_72%,#09080b_100%)] xl:aspect-[5/6]"
     >
       {portrait.src ? (
         <Image
@@ -39,7 +39,7 @@ export function PortraitPanel({ portrait }: { portrait: Portrait }) {
           loading="eager"
           fetchPriority="high"
           sizes="(min-width: 1200px) 30vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover object-[50%_32%] grayscale contrast-125 mix-blend-luminosity"
+          className="object-cover object-[50%_32%]"
         />
       ) : (
         <div className="absolute inset-0" aria-hidden="true">
@@ -70,7 +70,7 @@ export function PortraitPanel({ portrait }: { portrait: Portrait }) {
         </div>
       )}
 
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(9,8,11,0.85)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(9,8,11,0.6)_0%,transparent_16%,transparent_55%,rgba(9,8,11,0.85)_100%)]" />
 
       <Corner className="left-3 top-3 border-l border-t" />
       <Corner className="right-3 top-3 border-r border-t" />

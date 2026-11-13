@@ -6,7 +6,7 @@ type TechBadgeProps = {
 const tones = {
   neutral: "border-line text-mute",
   red: "border-line-red text-red",
-  solid: "border-red bg-red text-white",
+  solid: "border-red bg-red text-bg",
 } as const;
 
 export function TechBadge({ children, tone = "neutral" }: TechBadgeProps) {
