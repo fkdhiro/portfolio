@@ -2,28 +2,23 @@ import type { Portfolio } from "@/types/portfolio";
 
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- *  SINGLE SOURCE OF CONTENT — Akiyuki Miyama
+ *  SINGLE SOURCE OF CONTENT — Willian Hiroshi
  * ─────────────────────────────────────────────────────────────────────────────
  *  Every string, number and link rendered on the page lives here.
- *  Facts come from Akiyuki's CV. Rules kept on purpose:
- *  - Figures are only the ones confirmed (≈10M events/day on ETS, ≈US$500/month
- *    on one specific white-label deployment, 10 people led (confirmed by
- *    Akiyuki; Ana Gaming alone was 6 engineers + 1 QA), 10M+ tracked clicks,
- *    client bases of 10M+ customers and a 2.5M requests/minute peak on the
- *    Even Tecnologia platform).
- *  - RiskOS, ARQON and the Gamification Engine are NOT presented as production
- *    products.
- *  - Current role confirmed by Akiyuki: Head de Projetos at Even Tecnologia
- *    (jul/2026 — atual). It replaces the unvalidated "Minha Sorte" reference.
+ *  Rules kept on purpose:
+ *  - No figures besides "5 anos" de experiência e "milhões de usuários".
+ *  - No internal project/client names (except Online Queue).
+ *  - AWS: only ECR, ECS and S3. Java and Machine Learning listed as intermediate.
  *  - Social links stay `null` (hidden) until confirmed profile URLs exist.
- *  - Portrait: /public/images/portrait.webp (red/black duotone applied in PortraitPanel).
+ *  - Portrait: `src: null` renders the abstract panel until a real photo exists
+ *    (replace assets/portrait-source.png, run `npm run images`, set the src).
  * ─────────────────────────────────────────────────────────────────────────────
  */
 export const portfolio: Portfolio = {
   site: {
-    title: "Akiyuki Miyama | Arquiteto de Sistemas e Líder de Engenharia",
+    title: "Willian Hiroshi | Engenheiro de Software Full Stack",
     description:
-      "Arquiteto de Sistemas especializado em sistemas distribuídos, backend, cloud, tracking e liderança técnica.",
+      "Engenheiro de software full stack com 5 anos de experiência: Node.js, NestJS, TypeScript e React em plataformas de iGaming com milhões de usuários.",
     lang: "pt-BR",
   },
 
@@ -35,47 +30,47 @@ export const portfolio: Portfolio = {
   ],
 
   profile: {
-    fullName: "Akiyuki Miyama",
-    wordmark: "AKIYUKI.",
+    fullName: "Willian Hiroshi",
+    wordmark: "HIROSHI.",
     greeting: "Olá, eu sou",
-    name: "AKIYUKI.",
-    headline: "Arquiteto de Sistemas e Líder de Engenharia",
-    microheadline: "Arquiteto de Sistemas // Sistemas Distribuídos // Cloud",
+    name: "HIROSHI.",
+    headline: "Engenheiro de Software Full Stack",
+    microheadline: "Full Stack // Node.js · NestJS // TypeScript · React",
     intro:
-      "Arquiteto de Sistemas e líder técnico. Projeto plataformas distribuídas, resilientes e eficientes, conectando engenharia backend, cloud e decisões de arquitetura aos objetivos reais do negócio.",
-    status: { label: "Online", detail: "Aberto a conversas" },
+      "Engenheiro full stack com 5 anos de experiência em desenvolvimento, os últimos em plataformas de iGaming com milhões de usuários. Atuo de ponta a ponta: arquitetura e backend em Node.js/NestJS e TypeScript, interfaces em React/Next.js e entrega em containers na AWS.",
+    status: { label: "Online", detail: "Aberto a vagas · remoto" },
     primaryCta: { label: "Entre em contato", href: "#contact" },
     secondaryCta: { label: "Explorar projetos", href: "#flagships" },
     portrait: {
-      src: "/images/portrait.webp",
-      alt: "Retrato de Akiyuki Miyama",
-      caption: { title: "Akiyuki Miyama", subtitle: "Arquiteto de Sistemas" },
+      src: null,
+      alt: "Retrato de Willian Hiroshi",
+      caption: { title: "Willian Hiroshi", subtitle: "Engenheiro Full Stack" },
     },
     heroCards: [
       {
         index: "01",
-        title: "Sistemas Distribuídos",
-        chips: ["DDD", "EDA", "gRPC"],
-        description: "Arquiteturas orientadas a domínio e eventos",
+        title: "Backend e Arquitetura",
+        chips: ["NestJS", "gRPC", "RabbitMQ"],
+        description: "Microsserviços orientados a eventos e multi-tenant",
       },
       {
         index: "02",
-        title: "Cloud e Plataforma",
-        chips: ["AWS", "ECS", "Terraform"],
-        description: "Deploy, resiliência, observabilidade e FinOps",
+        title: "Frontend e Produto",
+        chips: ["React", "Next.js", "PixiJS"],
+        description: "Painéis, experiência do jogador e minigames",
       },
       {
         index: "03",
-        title: "Liderança de Engenharia",
-        chips: ["Mentoria", "Arquitetura", "Entrega"],
-        description: "Liderança técnica e qualidade de engenharia",
+        title: "Cloud e Entrega",
+        chips: ["Docker", "AWS", "CI/CD"],
+        description: "Containers, deploy e observabilidade",
       },
     ],
     heroStats: [
-      { value: "~10M", label: "Eventos/dia no ETS" },
-      { value: "~US$500", label: "AWS/mês · implantação white-label" },
-      { value: "10", label: "Profissionais liderados" },
-      { value: "10M+", label: "Cliques rastreados · link tracker" },
+      { value: "5 anos", label: "De experiência em desenvolvimento" },
+      { value: "Milhões", label: "De usuários · plataformas de iGaming" },
+      { value: "Full stack", label: "Backend + frontend, ponta a ponta" },
+      { value: "PT·EN·ES", label: "Nativo · fluente · profissional" },
     ],
   },
 
@@ -84,27 +79,27 @@ export const portfolio: Portfolio = {
     eyebrow: "Perfil de engenharia",
     title: "Trajetória e Filosofia",
     paragraphs: [
-      "Minha trajetória começou com Business Intelligence e engenharia de dados, avançou para o desenvolvimento frontend e backend e evoluiu para arquitetura de sistemas e liderança técnica. Essa experiência me permite conectar decisões de software a métricas, riscos e necessidades operacionais.",
-      "Atuo no desenho e na evolução de sistemas distribuídos, plataformas multi-tenant, soluções de tracking server-side e infraestrutura AWS. Trabalho com TypeScript, NestJS, DDD, arquitetura orientada a eventos, mensageria, gRPC, CI/CD, Terraform e observabilidade.",
-      "Minha abordagem prioriza modelos de domínio claros, resiliência, simplicidade operacional e eficiência financeira. Escolho tecnologia em função do problema e de suas restrições, não pela complexidade da stack.",
+      "Comecei com redes e suporte de TI, passei por projetos freelance com a stack MERN e Electron e me consolidei como engenheiro full stack em produtos de iGaming, onde passei os últimos anos construindo plataformas usadas por milhões de pessoas.",
+      "Trabalho de ponta a ponta: arquitetura e backend em Node.js, NestJS e TypeScript (microsserviços, gRPC, RabbitMQ, Redis, WebSocket, sistemas multi-tenant e orientados a eventos), interfaces em React e Next.js e entrega com Docker, CI e AWS.",
+      "Tenho experiência forte em gamificação: missões, torneios, recompensas, minigames, segmentação de jogadores e engajamento. Falo português (nativo), inglês (fluente) e espanhol (profissional).",
     ],
     quote:
-      "A melhor arquitetura é a que resolve o problema certo, com riscos conhecidos, custos sustentáveis e capacidade real de evolução.",
+      "Gosto de problemas de escala e de arquitetura, de código sustentável e de entender o produto para decidir bem.",
     principles: [
       {
         index: "01",
-        title: "Engenharia orientada ao negócio",
-        body: "Decisões técnicas conectadas a valor, custo e risco.",
+        title: "Ponta a ponta",
+        body: "Do modelo de dados à interface, com a mesma atenção ao backend e ao frontend.",
       },
       {
         index: "02",
-        title: "Confiabilidade desde o projeto",
-        body: "Consistência, observabilidade, recuperação e resiliência.",
+        title: "Escala e arquitetura",
+        body: "Serviços orientados a eventos, multi-tenant e em tempo real, prontos para crescer.",
       },
       {
         index: "03",
-        title: "Escalabilidade sustentável",
-        body: "Crescimento com previsibilidade financeira e operacional.",
+        title: "Foco no produto",
+        body: "Entender o negócio e o usuário para escolher a solução certa, não só a mais nova.",
       },
     ],
     experience: {
@@ -112,65 +107,60 @@ export const portfolio: Portfolio = {
       title: "Experiência profissional",
       items: [
         {
-          company: "Even Tecnologia",
-          role: "Head de Projetos",
-          period: "jul/2026 — atual",
+          company: "Supernova Gaming",
+          role: "Engenheiro Full Stack",
+          period: "out/2025 — nov/2026",
           summary:
-            "Plataforma B2B2C multi-tenant com arquitetura orientada a eventos e gRPC, atendendo clientes com páginas próprias na plataforma.",
+            "Soluções de gamificação para plataformas de iGaming com milhões de usuários: missões, torneios, recompensas, segmentação de jogadores e engajamento.",
           highlights: [
-            "Arquitetura multi-tenant com EDA + gRPC",
-            "Suporte a clientes com bases de mais de 10 milhões de clientes",
-            "Pico máximo suportado de 2,5 milhões de requisições por minuto",
-          ],
-        },
-        {
-          company: "SuperNova",
-          role: "Arquiteto de Sistemas",
-          period: "out/2025 — jun/2026",
-          summary:
-            "Projeto de uma plataforma white-label multi-tenant com arquitetura orientada a eventos, gRPC e microsserviços na AWS.",
-          highlights: [
-            "CI/CD com deploy blue/green e práticas de FinOps",
-            "Infraestrutura reportada em ~US$500/mês, ~50% abaixo da estimativa inicial",
+            "Backend em NestJS/TypeScript com microsserviços (gRPC e REST), RabbitMQ, Redis/BullMQ, arquitetura orientada a eventos e multi-tenant",
+            "Interfaces em React/Next.js para painéis administrativos e experiência do jogador, incluindo minigames com PixiJS",
+            "Integrações em tempo real (WebSocket, webhooks) com plataformas parceiras",
+            "Docker, GitHub Actions e deploy na AWS (ECR, ECS, S3); observabilidade com Pino, Prometheus e OpenTelemetry",
+            "Liderança técnica no dia a dia: decisões de arquitetura, revisão de código e apoio ao time",
           ],
         },
         {
           company: "Ana Gaming",
-          role: "Tech Lead Back-End",
-          period: "abr/2025 — out/2025",
+          role: "Engenheiro de Software",
+          period: "fev/2025 — out/2025",
           summary:
-            "Liderança de 6 engenheiros e 1 QA, com padrões de entrega, revisões arquiteturais e mentoria.",
+            "Serviços backend para plataformas de jogos online: gamificação, engajamento de jogadores e APIs escaláveis.",
           highlights: [
-            "Desenvolvimento de soluções distribuídas",
-            "Plataforma ETS processando ~10 milhões de eventos por dia",
+            "Integrações em tempo real e contribuição com arquitetura e performance da plataforma",
+            "Frontend em React quando a entrega pedia, ponta a ponta com o backend",
           ],
         },
         {
           company: "Growth Digital Marketing",
-          role: "Engenheiro Back-End",
-          period: "mai/2024 — abr/2025",
-          summary: "Sistemas de tracking multi-cliente, redirecionamento e analytics.",
-          highlights: ["Link tracker com mais de 10 milhões de cliques rastreados"],
+          role: "Engenheiro de Software",
+          period: "out/2023 — fev/2025",
+          summary: "Serviços backend e APIs em tempo real com Node.js e NestJS.",
+          highlights: [
+            "Integrações via WebSocket e funcionalidades de gamificação",
+            "Telas em React integradas a essas APIs",
+          ],
         },
         {
-          company: "Growth Digital Marketing",
-          role: "Engenheiro Front-End Trainee",
-          period: "out/2023 — mai/2024",
-          summary: "React e TypeScript em landing pages e interfaces para campanhas.",
+          company: "Upwork",
+          role: "Desenvolvedor freelancer",
+          period: "nov/2022 — out/2023",
+          summary:
+            "Aplicações web e desktop para clientes com MERN (MongoDB, Express, React, Node.js) e Electron.js.",
           highlights: [],
         },
         {
-          company: "Brid Soluções",
-          role: "Analista de Sistemas BI (estágio)",
-          period: "set/2022 — out/2023",
-          summary: "Qlik Sense, Power BI, ETL, bancos de dados e dashboards.",
+          company: "Prefeitura Municipal de Ibiporã",
+          role: "Estagiário de TI",
+          period: "jan/2022 — nov/2022",
+          summary: "Suporte de TI ao município: redes, hardware, software e sistemas administrativos.",
           highlights: [],
         },
       ],
       education: {
-        course: "Engenharia de Software",
-        institution: "UNOPAR",
-        period: "ago/2022 — ago/2025",
+        course: "Bacharelado em Engenharia de Software",
+        institution: "UTFPR",
+        period: "2020 — 2025",
       },
     },
     skills: {
@@ -178,28 +168,28 @@ export const portfolio: Portfolio = {
       title: "Competências técnicas",
       groups: [
         {
-          label: "Arquitetura",
-          items: ["DDD", "EDA", "CQRS", "Outbox/Inbox", "Idempotência", "Sagas", "Resiliência", "Microsserviços", "Multi-tenancy"],
+          label: "Backend",
+          items: ["Node.js", "NestJS", "TypeScript", "Express", "REST + OpenAPI", "gRPC", "Microsserviços", "WebSocket", "RabbitMQ", "Redis", "BullMQ", "Webhooks"],
         },
         {
-          label: "Backend",
-          items: ["Node.js", "TypeScript", "NestJS", "REST", "gRPC", "WebSockets", "RabbitMQ", "Redis", "SQS/SNS"],
+          label: "Frontend",
+          items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "TanStack Query", "Zustand", "React Hook Form + Zod", "PixiJS", "Electron"],
         },
         {
           label: "Cloud / DevOps",
-          items: ["AWS", "ECS/Fargate", "EC2", "Docker", "Kubernetes/EKS", "Terraform", "CI/CD", "GitHub Actions", "Blue/green", "FinOps"],
+          items: ["Docker", "GitHub Actions", "AWS ECR", "AWS ECS", "AWS S3", "CI/CD"],
         },
         {
           label: "Dados",
-          items: ["PostgreSQL", "MongoDB", "ETL", "Qlik Sense", "Power BI"],
+          items: ["PostgreSQL", "MongoDB", "Python (FastAPI, Flask)", "BigQuery"],
         },
         {
-          label: "Observabilidade",
-          items: ["OpenTelemetry", "Grafana", "Prometheus", "Logs estruturados", "Tracing distribuído"],
+          label: "Qualidade",
+          items: ["Jest", "Supertest", "Vitest", "Playwright", "Pino", "Prometheus", "OpenTelemetry"],
         },
         {
-          label: "Liderança",
-          items: ["Mentoria", "Revisão de código", "Arquitetura", "Priorização técnica", "Entrega"],
+          label: "Também",
+          items: ["Java (intermediário)", "Machine Learning (intermediário)", "Vue", "Ruby on Rails", "Go"],
         },
       ],
     },
@@ -210,133 +200,133 @@ export const portfolio: Portfolio = {
     eyebrow: "Vitrine de arquitetura",
     title: "Projetos em destaque",
     description:
-      "Plataformas que projetei, liderei ou desenvolvi em contexto profissional — com os números que foram efetivamente medidos.",
+      "Plataformas que projetei e desenvolvi em contexto profissional e projetos próprios.",
     flagship: {
       badge: "Plataforma principal",
-      context: "Ana Gaming · 2025",
-      title: "ETS — Event Tracker Stream",
+      context: "Supernova Gaming · 2025–2026",
+      title: "Serviço de gamificação multi-tenant",
       description:
-        "Plataforma de tracking server-side para ingestão, processamento, atribuição e distribuição de eventos em alto volume, conectando sinais de mídia, eventos da plataforma e métricas de aquisição.",
+        "Serviço orientado a eventos para missões, torneios e recompensas em plataformas de iGaming com milhões de usuários, com comunicação entre serviços via gRPC e filas.",
       metrics: [
-        { value: "~10M", label: "Eventos por dia" },
-        { value: "S2S", label: "Postbacks server-side" },
-        { value: "6", label: "Plataformas de mídia" },
-        { value: "EDA", label: "Orientada a eventos" },
+        { value: "Milhões", label: "De usuários" },
+        { value: "gRPC", label: "Entre serviços" },
+        { value: "EDA", label: "Orientado a eventos" },
+        { value: "Multi", label: "Tenant / white-label" },
       ],
       stackLabel: "Capacidades da plataforma",
       stackNote:
-        "As camadas descrevem capacidades funcionais da plataforma, não necessariamente sete serviços independentes.",
+        "As camadas descrevem capacidades funcionais da plataforma, não necessariamente serviços independentes.",
       layers: [
         {
           id: "l1",
           code: "L1",
-          name: "Ingestão de eventos",
-          headline: "Recebimento e validação de eventos",
-          body: "Porta de entrada da plataforma: recebe eventos de mídia e da própria plataforma, valida formato e origem e descarta dados inconsistentes antes do processamento.",
+          name: "Missões",
+          headline: "Regras, progresso e conclusão",
+          body: "Missões configuráveis por operação, com regras de progresso calculadas a partir dos eventos de jogo de cada jogador.",
           specs: [
-            { label: "Função", value: "Ingestão" },
-            { label: "Foco", value: "Validação" },
+            { label: "Função", value: "Engajamento" },
+            { label: "Foco", value: "Regras" },
           ],
-          tags: ["Validação", "Contratos de evento", "Alto volume"],
+          tags: ["Missões", "Regras", "Eventos"],
         },
         {
           id: "l2",
           code: "L2",
-          name: "Processamento",
-          headline: "Normalização e tratamento",
-          body: "Padroniza eventos de fontes diferentes em um modelo comum, trata duplicidades e prepara os dados necessários para a atribuição.",
+          name: "Torneios",
+          headline: "Competições e rankings",
+          body: "Torneios com rankings atualizados conforme os eventos chegam, para competição entre jogadores.",
           specs: [
-            { label: "Função", value: "Processamento" },
-            { label: "Foco", value: "Consistência" },
+            { label: "Função", value: "Competição" },
+            { label: "Foco", value: "Rankings" },
           ],
-          tags: ["Normalização", "Idempotência", "Modelo comum"],
+          tags: ["Torneios", "Rankings", "Redis"],
         },
         {
           id: "l3",
           code: "L3",
-          name: "Atribuição",
-          headline: "Correlação de campanhas, cliques e eventos",
-          body: "Relaciona cliques, campanhas e eventos de conversão para atribuir cada resultado à sua origem de aquisição.",
+          name: "Recompensas",
+          headline: "Concessão e controle de prêmios",
+          body: "Concessão de recompensas ao concluir missões e torneios, com controle para que cada prêmio seja entregue uma única vez.",
           specs: [
-            { label: "Função", value: "Atribuição" },
-            { label: "Foco", value: "Origem da conversão" },
+            { label: "Função", value: "Recompensa" },
+            { label: "Foco", value: "Consistência" },
           ],
-          tags: ["Campanhas", "Cliques", "Conversões"],
+          tags: ["Recompensas", "Idempotência", "BullMQ"],
         },
         {
           id: "l4",
           code: "L4",
-          name: "Mensageria",
-          headline: "Distribuição assíncrona e desacoplamento",
-          body: "Mensageria entre as etapas do fluxo, para que picos de volume e falhas pontuais não se propaguem pela plataforma.",
+          name: "Segmentação",
+          headline: "Jogadores certos para cada ação",
+          body: "Segmentação de jogadores para direcionar missões, torneios e estratégias de engajamento por perfil.",
           specs: [
-            { label: "Função", value: "Distribuição" },
-            { label: "Foco", value: "Desacoplamento" },
+            { label: "Função", value: "Segmentação" },
+            { label: "Foco", value: "Engajamento" },
           ],
-          tags: ["Mensageria", "Assíncrono", "Filas"],
+          tags: ["Segmentos", "Perfis", "Engajamento"],
         },
         {
           id: "l5",
           code: "L5",
-          name: "Integrações",
-          headline: "Postbacks e plataformas externas",
-          body: "Envio de conversões por postback S2S para as plataformas de mídia integradas: Meta, Google, Kwai, X, MGID e Taboola.",
+          name: "Mensageria",
+          headline: "Eventos assíncronos e desacoplamento",
+          body: "Comunicação entre serviços por eventos e filas, para que picos de volume e falhas pontuais não se propaguem.",
           specs: [
-            { label: "Função", value: "Integração" },
-            { label: "Foco", value: "Postbacks S2S" },
+            { label: "Função", value: "Distribuição" },
+            { label: "Foco", value: "Desacoplamento" },
           ],
-          tags: ["Meta", "Google", "Kwai", "X", "MGID", "Taboola"],
+          tags: ["RabbitMQ", "gRPC", "Filas"],
         },
         {
           id: "l6",
           code: "L6",
-          name: "Análise de dados",
-          headline: "Indicadores e dados de performance",
-          body: "Consolida os dados de aquisição e conversão em indicadores de performance para as equipes de negócio e mídia.",
+          name: "Integrações",
+          headline: "Tempo real com plataformas parceiras",
+          body: "Integrações por WebSocket e webhooks, mantendo a mesma solução atendendo várias operações (multi-tenant).",
           specs: [
-            { label: "Função", value: "Análise" },
-            { label: "Foco", value: "Performance" },
+            { label: "Função", value: "Integração" },
+            { label: "Foco", value: "Tempo real" },
           ],
-          tags: ["Indicadores", "Aquisição", "Performance"],
+          tags: ["WebSocket", "Webhooks", "Multi-tenant"],
         },
         {
           id: "l7",
           code: "L7",
           name: "Observabilidade",
           headline: "Logs, métricas e tracing",
-          body: "Visibilidade de ponta a ponta do fluxo de eventos para detectar falhas, gargalos e divergências rapidamente.",
+          body: "Visibilidade de ponta a ponta do fluxo de eventos para detectar falhas e gargalos rapidamente.",
           specs: [
             { label: "Função", value: "Operação" },
             { label: "Foco", value: "Visibilidade" },
           ],
-          tags: ["Logs", "Métricas", "Tracing"],
+          tags: ["Pino", "Prometheus", "OpenTelemetry"],
         },
       ],
     },
     projects: [
       {
-        eyebrow: "SuperNova · 2025–2026",
-        title: "Plataforma white-label multi-tenant",
+        eyebrow: "Projeto · white-label",
+        title: "SaaS white-label de sorteios e gamificação",
         description:
-          "Plataforma B2B2C white-label multi-tenant, projetada com microsserviços orientados a eventos na AWS.",
+          "Plataforma multi-tenant em monorepo: cada operação ganha sua própria marca sobre a mesma base de código.",
         details: [
-          "Arquitetura orientada a eventos e comunicação gRPC",
-          "CI/CD com deploy blue/green",
-          "FinOps: ~US$500/mês na implantação reportada, ~50% abaixo da estimativa inicial",
+          "Arquitetura multi-tenant / white-label",
+          "Backend em NestJS e frontend em Next.js",
+          "CI/CD com GitHub Actions",
         ],
-        tech: ["AWS", "EDA", "gRPC", "Blue/green", "FinOps"],
+        tech: ["NestJS", "Next.js", "PostgreSQL", "GitHub Actions"],
       },
       {
-        eyebrow: "Growth Digital Marketing · 2024–2025",
-        title: "Link tracker multi-cliente",
+        eyebrow: "Projeto · tempo real",
+        title: "Online Queue",
         description:
-          "Sistema multi-cliente de rastreamento de links, redirecionamento e analytics para campanhas.",
+          "Monitoramento de filas em tempo real que integra senhas a qualquer plataforma e avisa o usuário quando chega a vez dele.",
         details: [
-          "Rastreamento e redirecionamento de links por cliente",
-          "Analytics de cliques para campanhas",
-          "Mais de 10 milhões de cliques rastreados",
+          "Integração de senhas com qualquer plataforma",
+          "Aviso ao usuário quando chega a vez dele",
+          "Stack MERN de ponta a ponta",
         ],
-        tech: ["Rastreamento", "Redirecionamento", "Análise"],
+        tech: ["MongoDB", "Express", "React", "Node.js"],
       },
     ],
   },
@@ -346,76 +336,77 @@ export const portfolio: Portfolio = {
     eyebrow: "Índice de engenharia",
     title: "Matriz de Sistemas",
     description:
-      "Sistemas da experiência profissional e produtos próprios em evolução — cada um com seu status real.",
+      "Sistemas da experiência profissional e projetos próprios — cada um com seu contexto real.",
     allLabel: "Todos os sistemas",
     categories: [
       { id: "distributed", label: "Sistemas distribuídos" },
       { id: "cloud", label: "Cloud e plataforma" },
-      { id: "data", label: "Dados e analytics" },
-      { id: "product", label: "Engenharia de produto" },
+      { id: "realtime", label: "Tempo real" },
+      { id: "product", label: "Frontend e produto" },
     ],
     systems: [
       {
-        id: "ets",
-        categories: ["distributed", "data"],
-        title: "ETS — Event Tracker Stream",
+        id: "gamification",
+        categories: ["distributed", "cloud"],
+        title: "Serviço de gamificação multi-tenant",
         description:
-          "Tracking server-side de alto volume: ingestão, atribuição e postbacks S2S para plataformas de mídia.",
+          "Missões, torneios e recompensas orientados a eventos, com gRPC, RabbitMQ e Redis.",
         meta: [
-          { label: "Contexto", value: "Ana Gaming" },
+          { label: "Contexto", value: "Supernova Gaming" },
+          { label: "Status", value: "Experiência profissional" },
+        ],
+      },
+      {
+        id: "minigames",
+        categories: ["product"],
+        title: "Minigames e experiência do jogador",
+        description:
+          "Interfaces em React/Next.js e minigames com PixiJS para a experiência do jogador.",
+        meta: [
+          { label: "Contexto", value: "Supernova Gaming" },
           { label: "Status", value: "Experiência profissional" },
         ],
       },
       {
         id: "white-label",
-        categories: ["cloud", "distributed"],
-        title: "Plataforma white-label multi-tenant",
+        categories: ["cloud", "product"],
+        title: "SaaS white-label de sorteios",
         description:
-          "Plataforma B2B2C multi-tenant com EDA, gRPC, blue/green e FinOps na AWS.",
-        meta: [
-          { label: "Contexto", value: "SuperNova" },
-          { label: "Status", value: "Experiência profissional" },
-        ],
-      },
-      {
-        id: "link-tracker",
-        categories: ["data", "product"],
-        title: "Link tracker multi-cliente",
-        description:
-          "Rastreamento de links, redirecionamento e analytics multi-cliente, com mais de 10 milhões de cliques.",
-        meta: [
-          { label: "Contexto", value: "Growth Digital Marketing" },
-          { label: "Status", value: "Experiência profissional" },
-        ],
-      },
-      {
-        id: "riskos",
-        categories: ["data", "product"],
-        title: "RiskOS",
-        description: "Produto voltado a risco, scores e analytics.",
-        meta: [
-          { label: "Tipo", value: "Produto próprio" },
-          { label: "Status", value: "Em evolução" },
-        ],
-      },
-      {
-        id: "arqon",
-        categories: ["cloud"],
-        title: "ARQON",
-        description: "Automação de GitHub, infraestrutura como código e CI/CD.",
-        meta: [
-          { label: "Tipo", value: "Conceito" },
-          { label: "Status", value: "Em desenvolvimento" },
-        ],
-      },
-      {
-        id: "gamification",
-        categories: ["product"],
-        title: "Motor de gamificação",
-        description: "Motor de missões, torneios, rankings e benefícios.",
+          "Plataforma multi-tenant em monorepo com NestJS, Next.js, PostgreSQL e GitHub Actions.",
         meta: [
           { label: "Tipo", value: "Projeto" },
-          { label: "Status", value: "Em planejamento" },
+          { label: "Status", value: "White-label" },
+        ],
+      },
+      {
+        id: "engagement-apis",
+        categories: ["realtime", "distributed"],
+        title: "APIs de engajamento em tempo real",
+        description:
+          "Serviços backend e integrações em tempo real para gamificação e engajamento de jogadores.",
+        meta: [
+          { label: "Contexto", value: "Ana Gaming · Growth" },
+          { label: "Status", value: "Experiência profissional" },
+        ],
+      },
+      {
+        id: "online-queue",
+        categories: ["realtime", "product"],
+        title: "Online Queue",
+        description: "Monitoramento de filas em tempo real com aviso ao usuário (MERN).",
+        meta: [
+          { label: "Tipo", value: "Projeto próprio" },
+          { label: "Status", value: "MERN" },
+        ],
+      },
+      {
+        id: "freelance-apps",
+        categories: ["product"],
+        title: "Aplicações web e desktop",
+        description: "Aplicações para clientes com MERN e Electron.js: APIs e interfaces responsivas.",
+        meta: [
+          { label: "Contexto", value: "Upwork" },
+          { label: "Status", value: "Freelance" },
         ],
       },
     ],
@@ -424,23 +415,23 @@ export const portfolio: Portfolio = {
   contact: {
     marker: { code: "//04.00", name: "SEC_CONTATO", position: "04/05" },
     eyebrow: "Contato direto",
-    headline: ["Vamos arquitetar", "algo extraordinário."],
-    body: "Vamos conversar sobre arquitetura de sistemas, engenharia de plataformas e desafios de escala.",
-    email: "akiyuki090@gmail.com",
+    headline: ["Vamos construir", "algo extraordinário."],
+    body: "Aberto a vagas full stack, backend ou frontend, em regime remoto. Respondo por e-mail ou LinkedIn.",
+    email: "w.hiroshi.fkd@gmail.com",
     copyLabel: "Copiar e-mail",
     copiedLabel: "Copiado!",
     copyErrorLabel: "Falha ao copiar — selecione o endereço",
     socials: [
-      { platform: "github", label: "GitHub", href: null },
-      { platform: "linkedin", label: "LinkedIn", href: null },
+      { platform: "github", label: "GitHub", href: "https://github.com/fkdhiro" },
+      { platform: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/w-hiroshi" },
       { platform: "x", label: "X", href: null },
       { platform: "instagram", label: "Instagram", href: null },
     ],
   },
 
   footer: {
-    copyright: "© 2026 Akiyuki Miyama",
-    signature: "Arquitetura de sistemas · engenharia de plataformas",
+    copyright: "© 2026 Willian Hiroshi",
+    signature: "Engenharia full stack · Londrina, PR · remoto",
     build: "//05.00 SEC_FIM [05/05]",
   },
 };

@@ -1,4 +1,4 @@
-# Portfólio — Akiyuki Miyama
+# Portfólio — Willian Hiroshi
 
 Next.js (App Router) + TypeScript + Tailwind CSS, exportado como **site estático** (`out/`).
 
@@ -25,6 +25,6 @@ Adicione `?replayIntro=1` à URL para rever a abertura sem recarregar o cache.
 ## Onde editar
 
 - **Conteúdo (textos, experiências, projetos, métricas, e-mail, redes):** `src/data/portfolio.ts`
-- **Foto:** substitua `assets/portrait-source.png` e rode `npm run images`
+- **Foto:** coloque `assets/portrait-source.png`, rode `npm run images` e defina `profile.portrait.src` como `/images/portrait.webp` (com `null` aparece o painel abstrato)
 - **Animação (tempos, quantidade de cursores, perfis por dispositivo):** `src/components/animation/animationTimeline.ts` e `cursorPaths.ts`
 - Links sociais com `href: null` não aparecem — preencha só com URLs reais.
