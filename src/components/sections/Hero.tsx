@@ -41,7 +41,7 @@ export function Hero({ profile }: { profile: Profile }) {
     <section id="top" aria-labelledby="hero-title" className="relative overflow-hidden pt-[72px] md:pt-[76px]">
       {/* Ambient wine light behind the portrait. */}
       <div
-        className="pointer-events-none absolute left-1/2 top-[30%] h-[640px] w-[900px] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(51,255,51,0.10),transparent)]"
+        className="pointer-events-none absolute left-1/2 top-[30%] h-[640px] w-[900px] -translate-x-1/2 bg-[radial-gradient(closest-side,rgba(255,59,69,0.10),transparent)]"
         aria-hidden="true"
       />
 
@@ -61,7 +61,7 @@ export function Hero({ profile }: { profile: Profile }) {
                 <span
                   data-cursor-target="name"
                   data-cursor-intro="name"
-                  className="mt-2 inline-block bg-red px-3 pb-1 pt-2 text-[clamp(48px,6vw,88px)] font-black leading-[0.86] tracking-[-0.045em] text-bg"
+                  className="mt-2 inline-block bg-red px-3 pb-1 pt-2 text-[clamp(48px,6vw,88px)] font-black leading-[0.86] tracking-[-0.045em] text-white"
                 >
                   {profile.name}
                 </span>
@@ -84,7 +84,7 @@ export function Hero({ profile }: { profile: Profile }) {
                 href={profile.primaryCta.href}
                 data-cursor-target="cta"
                 data-cursor-intro="cta"
-                className="group inline-flex items-center gap-3 whitespace-nowrap bg-red px-5 py-3.5 font-mono text-[13px] font-medium uppercase tracking-[0.08em] text-bg transition-colors hover:bg-red-deep"
+                className="group inline-flex items-center gap-3 whitespace-nowrap bg-red px-5 py-3.5 font-mono text-[13px] font-medium uppercase tracking-[0.08em] text-white transition-colors hover:bg-red-deep"
               >
                 <span className="text-white/70" aria-hidden="true">&gt;_</span>
                 {profile.primaryCta.label}

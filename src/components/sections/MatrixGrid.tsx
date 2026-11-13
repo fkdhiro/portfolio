@@ -61,7 +61,7 @@ export function MatrixGrid({ matrix }: { matrix: Matrix }) {
                 if (f.id !== filter) withViewTransition(() => setFilter(f.id));
               }}
               className={`micro relative flex min-h-11 shrink-0 items-center gap-2 px-4 py-2.5 font-medium md:min-h-0 transition-colors duration-200 ${
-                active ? "text-bg" : "text-mute hover:text-ink"
+                active ? "text-white" : "text-mute hover:text-ink"
               }`}
             >
               {active ? (
@@ -72,7 +72,7 @@ export function MatrixGrid({ matrix }: { matrix: Matrix }) {
                 />
               ) : null}
               <span className="relative">{f.label}</span>
-              <span className={`relative font-mono text-[10px] ${active ? "text-bg/70" : "text-dim"}`}>
+              <span className={`relative font-mono text-[10px] ${active ? "text-white/70" : "text-dim"}`}>
                 {String(counts[f.id] ?? 0).padStart(2, "0")}
               </span>
             </button>

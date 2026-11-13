@@ -65,10 +65,10 @@ export function LayerTabs({ layers, label }: { layers: Layer[]; label: string })
               tabIndex={selected ? 0 : -1}
               onClick={() => select(i)}
               className={`relative flex shrink-0 items-center gap-2 px-4 py-3.5 text-left transition-colors duration-200 focus-visible:-outline-offset-2 xl:flex-1 xl:shrink ${
-                selected ? "text-bg" : "text-mute hover:bg-white/[0.03] hover:text-ink"
+                selected ? "text-white" : "text-mute hover:bg-white/[0.03] hover:text-ink"
               }`}
             >
-              <span className={`relative font-mono text-[11px] ${selected ? "text-bg/70" : "text-red"}`}>
+              <span className={`relative font-mono text-[11px] ${selected ? "text-white/80" : "text-red"}`}>
                 {layer.code}
               </span>
               <span className="relative whitespace-nowrap text-[13px] font-semibold tracking-[-0.01em]">
