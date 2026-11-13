@@ -20,6 +20,19 @@ export const portfolio: Portfolio = {
     description:
       "Engenheiro de software full stack com 5 anos de experiência: Node.js, NestJS, TypeScript e React em plataformas de iGaming com milhões de usuários.",
     lang: "pt-BR",
+    person: {
+      name: "Willian Hiroshi Fukuda",
+      alternateName: ["Willian Fukuda", "Hiroshi"],
+      jobTitle: "Engenheiro de Software Full Stack",
+      email: "w.hiroshi.fkd@gmail.com",
+      city: "Londrina",
+      region: "PR",
+      country: "BR",
+      sameAs: ["https://www.linkedin.com/in/w-hiroshi", "https://github.com/fkdhiro"],
+      alumniOf: ["Universidade Tecnológica Federal do Paraná (UTFPR)", "SENAI/SC"],
+      knowsAbout: ["Node.js", "NestJS", "TypeScript", "React", "Next.js", "Microsserviços", "gRPC", "RabbitMQ", "Redis", "WebSocket", "MongoDB", "PostgreSQL", "Docker", "AWS", "Gamificação", "iGaming"],
+      knowsLanguage: ["pt-BR", "en", "es"],
+    },
   },
 
   nav: [
@@ -79,9 +92,9 @@ export const portfolio: Portfolio = {
     eyebrow: "Perfil de engenharia",
     title: "Trajetória e Filosofia",
     paragraphs: [
-      "Comecei com redes e suporte de TI, passei por projetos freelance com a stack MERN e Electron e me consolidei como engenheiro full stack em produtos de iGaming, onde passei os últimos anos construindo plataformas usadas por milhões de pessoas.",
+      "Comecei com redes e suporte de TI (sou técnico em Redes de Computadores pelo SENAI/SC), passei por projetos freelance com a stack MERN e Electron e me consolidei como engenheiro full stack em produtos de iGaming, onde passei os últimos anos construindo plataformas usadas por milhões de pessoas.",
       "Trabalho de ponta a ponta: arquitetura e backend em Node.js, NestJS e TypeScript (microsserviços, gRPC, RabbitMQ, Redis, WebSocket, sistemas multi-tenant e orientados a eventos), interfaces em React e Next.js e entrega com Docker, CI e AWS.",
-      "Tenho experiência forte em gamificação: missões, torneios, recompensas, minigames, segmentação de jogadores e engajamento. Falo português (nativo), inglês (fluente) e espanhol (profissional).",
+      "Tenho experiência forte em gamificação: missões, torneios, recompensas, minigames, segmentação de jogadores e engajamento. Uso IA no dia a dia do desenvolvimento: opero agentes com Claude Code, com várias sessões autônomas com regras, memória e ferramentas, para automatizar tarefas de ponta a ponta. Falo português (nativo), inglês (fluente) e espanhol (profissional).",
     ],
     quote:
       "Gosto de problemas de escala e de arquitetura, de código sustentável e de entender o produto para decidir bem.",
@@ -169,7 +182,7 @@ export const portfolio: Portfolio = {
       groups: [
         {
           label: "Backend",
-          items: ["Node.js", "NestJS", "TypeScript", "Express", "REST + OpenAPI", "gRPC", "Microsserviços", "WebSocket", "RabbitMQ", "Redis", "BullMQ", "Webhooks"],
+          items: ["Node.js", "NestJS", "TypeScript", "Express", "REST + OpenAPI", "gRPC", "Microsserviços", "WebSocket / Socket.IO", "RabbitMQ", "Redis", "BullMQ", "JWT / Passport", "Webhooks"],
         },
         {
           label: "Frontend",
@@ -177,11 +190,11 @@ export const portfolio: Portfolio = {
         },
         {
           label: "Cloud / DevOps",
-          items: ["Docker", "GitHub Actions", "AWS ECR", "AWS ECS", "AWS S3", "CI/CD"],
+          items: ["Docker", "Docker Compose", "GitHub Actions", "AWS ECR", "AWS ECS", "AWS S3", "CI/CD", "Linux"],
         },
         {
           label: "Dados",
-          items: ["PostgreSQL", "MongoDB", "Python (FastAPI, Flask)", "BigQuery"],
+          items: ["PostgreSQL", "MongoDB (Mongoose)", "Python (FastAPI, Flask)", "BigQuery", "Athena"],
         },
         {
           label: "Qualidade",
@@ -189,7 +202,7 @@ export const portfolio: Portfolio = {
         },
         {
           label: "Também",
-          items: ["Java (intermediário)", "Machine Learning (intermediário)", "Vue", "Ruby on Rails", "Go"],
+          items: ["Java (intermediário)", "Machine Learning (intermediário)", "Vue", "Ruby on Rails", "Go", "IoT (MQTT, RTSP)", "IA: LLMs e agentes (Claude Code)"],
         },
       ],
     },

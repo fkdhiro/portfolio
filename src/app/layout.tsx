@@ -40,6 +40,26 @@ export const metadata: Metadata = {
   description: portfolio.site.description,
 };
 
+const person = portfolio.site.person;
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: person.name,
+  alternateName: person.alternateName,
+  jobTitle: person.jobTitle,
+  email: `mailto:${person.email}`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: person.city,
+    addressRegion: person.region,
+    addressCountry: person.country,
+  },
+  sameAs: person.sameAs,
+  alumniOf: person.alumniOf.map((name) => ({ "@type": "EducationalOrganization", name })),
+  knowsAbout: person.knowsAbout,
+  knowsLanguage: person.knowsLanguage,
+};
+
 export const viewport: Viewport = {
   themeColor: "#09080b",
   colorScheme: "dark",
@@ -55,6 +75,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: introBootScript }} />
+        <script
+          type="application/ld+json"
+          // JSON.stringify output from static data; "<" escaped to keep the tag closed.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
+        />
       </head>
       <body>
         {children}

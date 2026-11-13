@@ -179,10 +179,26 @@ export type Footer = {
   build: string;
 };
 
+/** Machine-readable identity (schema.org Person JSON-LD); not rendered visually. */
+export type SitePerson = {
+  name: string;
+  alternateName: string[];
+  jobTitle: string;
+  email: string;
+  city: string;
+  region: string;
+  country: string;
+  sameAs: string[];
+  alumniOf: string[];
+  knowsAbout: string[];
+  knowsLanguage: string[];
+};
+
 export type Site = {
   title: string;
   description: string;
   lang: string;
+  person: SitePerson;
 };
 
 export type Portfolio = {
