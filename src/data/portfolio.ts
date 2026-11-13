@@ -446,6 +446,11 @@ export const portfolio: Portfolio = {
     copyLabel: "Copiar e-mail",
     copiedLabel: "Copiado!",
     copyErrorLabel: "Falha ao copiar — selecione o endereço",
+    cv: {
+      label: "Baixar CV (PDF)",
+      href: "/cv/Willian-Hiroshi-CV-PT.pdf",
+      alternate: { label: "English version", href: "/cv/Willian-Hiroshi-CV-EN.pdf", lang: "en" },
+    },
     socials: [
       { platform: "github", label: "GitHub", href: "https://github.com/fkdhiro" },
       { platform: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/w-hiroshi" },

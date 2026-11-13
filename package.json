@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "node scripts/preview.mjs out 4000",
     "lint": "eslint",
-    "images": "node scripts/generate-images.mjs"
+    "images": "node scripts/generate-images.mjs",
+    "build:prod": "NEXT_PUBLIC_SITE_URL=https://willian-hiroshi.netlify.app next build",
+    "deploy": "npm run build:prod && netlify deploy --prod --dir out --site willian-hiroshi"
   },
   "dependencies": {
     "lucide-react": "^1.70.0",

@@ -170,7 +170,15 @@ export type Contact = {
   copyLabel: string;
   copiedLabel: string;
   copyErrorLabel: string;
+  /** Web CV (no phone number), served from public/cv. */
+  cv: CvDownload;
   socials: SocialLink[];
+};
+
+export type CvDownload = {
+  label: string;
+  href: string;
+  alternate: { label: string; href: string; lang: string };
 };
 
 export type Footer = {

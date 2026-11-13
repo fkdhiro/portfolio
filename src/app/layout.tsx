@@ -37,10 +37,12 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const ogImage = {
-  url: "/images/portrait-1080.webp",
-  width: 1080,
-  height: 1080,
-  alt: portfolio.profile.portrait.alt,
+  // PNG 1200×630: the size/format LinkedIn, WhatsApp and X previews expect.
+  url: "/images/og.png",
+  width: 1200,
+  height: 630,
+  type: "image/png",
+  alt: `${portfolio.profile.fullName} — Desenvolvedor Full Stack · Engenheiro de Software`,
 };
 
 export const metadata: Metadata = {
