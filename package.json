@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "node scripts/preview.mjs out 4000",
-    "lint": "eslint"
+    "lint": "eslint",
+    "images": "node scripts/generate-images.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.70.0",
