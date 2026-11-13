@@ -184,9 +184,6 @@ export type SitePerson = {
   name: string;
   alternateName: string[];
   jobTitle: string;
-  email: string;
-  city: string;
-  region: string;
   country: string;
   sameAs: string[];
   alumniOf: string[];

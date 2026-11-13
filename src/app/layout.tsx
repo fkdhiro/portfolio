@@ -4,6 +4,7 @@ import { CursorOrchestra } from "@/components/animation/CursorOrchestra";
 import { IntroCurtain, introBootScript } from "@/components/animation/IntroReveal";
 import { RevealObserver } from "@/components/ui/RevealObserver";
 import { portfolio } from "@/data/portfolio";
+import { siteUrl } from "@/lib/siteUrl";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,9 +36,33 @@ const instrumentSerif = Instrument_Serif({
   preload: false,
 });
 
+const ogImage = {
+  url: "/images/portrait-1080.webp",
+  width: 1080,
+  height: 1080,
+  alt: portfolio.profile.portrait.alt,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: portfolio.site.title,
   description: portfolio.site.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: "/",
+    siteName: portfolio.profile.fullName,
+    title: portfolio.site.title,
+    description: portfolio.site.description,
+    locale: "pt_BR",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: portfolio.site.title,
+    description: portfolio.site.description,
+    images: [ogImage.url],
+  },
 };
 
 const person = portfolio.site.person;
@@ -47,13 +72,9 @@ const personJsonLd = {
   name: person.name,
   alternateName: person.alternateName,
   jobTitle: person.jobTitle,
-  email: `mailto:${person.email}`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: person.city,
-    addressRegion: person.region,
-    addressCountry: person.country,
-  },
+  url: `${siteUrl}/`,
+  // Privacy: no e-mail nor city in machine-readable data; contact via sameAs.
+  address: { "@type": "PostalAddress", addressCountry: person.country },
   sameAs: person.sameAs,
   alumniOf: person.alumniOf.map((name) => ({ "@type": "EducationalOrganization", name })),
   knowsAbout: person.knowsAbout,

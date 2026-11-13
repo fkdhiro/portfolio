@@ -8,28 +8,28 @@ import type { Portfolio } from "@/types/portfolio";
  *  Rules kept on purpose:
  *  - No figures besides "5 anos" de experiência e "milhões de usuários".
  *  - No internal project/client names (except Online Queue).
- *  - AWS: only ECR, ECS and S3. Java and Machine Learning listed as intermediate.
+ *  - AWS: only ECR, ECS and S3. Java, Machine Learning, React Native and C#/.NET
+ *    listed as intermediate.
+ *  - JSON-LD Person: no e-mail nor city (privacy); country + sameAs only.
  *  - Social links stay `null` (hidden) until confirmed profile URLs exist.
  *  - Portrait: real photo (assets/portrait-source.png → `npm run images`).
  * ─────────────────────────────────────────────────────────────────────────────
  */
 export const portfolio: Portfolio = {
   site: {
-    title: "Willian Hiroshi | Engenheiro de Software Full Stack",
+    title:
+      "Willian Hiroshi | Desenvolvedor Full Stack · Engenheiro de Software · Node.js · NestJS · TypeScript · React",
     description:
-      "Engenheiro de software full stack com 5 anos de experiência: Node.js, NestJS, TypeScript e React em plataformas de iGaming com milhões de usuários.",
+      "Desenvolvedor Full Stack e Engenheiro de Software com 5 anos de experiência: Node.js, NestJS, TypeScript, JavaScript e React em plataformas de iGaming com milhões de usuários.",
     lang: "pt-BR",
     person: {
       name: "Willian Hiroshi Fukuda",
       alternateName: ["Willian Fukuda", "Hiroshi"],
       jobTitle: "Engenheiro de Software Full Stack",
-      email: "w.hiroshi.fkd@gmail.com",
-      city: "Londrina",
-      region: "PR",
       country: "BR",
       sameAs: ["https://www.linkedin.com/in/w-hiroshi", "https://github.com/fkdhiro"],
       alumniOf: ["Universidade Tecnológica Federal do Paraná (UTFPR)", "SENAI/SC"],
-      knowsAbout: ["Node.js", "NestJS", "TypeScript", "React", "Next.js", "Microsserviços", "gRPC", "RabbitMQ", "Redis", "WebSocket", "MongoDB", "PostgreSQL", "Docker", "AWS", "Gamificação", "iGaming"],
+      knowsAbout: ["Node.js", "NestJS", "TypeScript", "JavaScript", "React", "Next.js", "React Native", "C#", ".NET", "SQL", "Microsserviços", "gRPC", "RabbitMQ", "Redis", "WebSocket", "MongoDB", "PostgreSQL", "Docker", "AWS", "Gamificação", "iGaming"],
       knowsLanguage: ["pt-BR", "en", "es"],
     },
   },
@@ -198,7 +198,7 @@ export const portfolio: Portfolio = {
         },
         {
           label: "Frontend",
-          items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "TanStack Query", "Zustand", "React Hook Form + Zod", "PixiJS", "Electron"],
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "TanStack Query", "Zustand", "React Hook Form + Zod", "PixiJS", "Electron"],
         },
         {
           label: "Cloud / DevOps",
@@ -206,7 +206,7 @@ export const portfolio: Portfolio = {
         },
         {
           label: "Dados",
-          items: ["PostgreSQL", "MongoDB (Mongoose)", "Python (FastAPI, Flask)", "BigQuery", "Athena"],
+          items: ["SQL", "PostgreSQL", "MongoDB (Mongoose)", "Python (FastAPI, Flask)", "BigQuery", "Athena"],
         },
         {
           label: "Qualidade",
@@ -214,7 +214,7 @@ export const portfolio: Portfolio = {
         },
         {
           label: "Também",
-          items: ["Java (intermediário)", "Machine Learning (intermediário)", "Vue", "Ruby on Rails", "Go", "IoT (MQTT, RTSP)", "IA: LLMs e agentes (Claude Code)"],
+          items: ["Java (intermediário)", "Machine Learning (intermediário)", "React Native (intermediário)", "C# / .NET (intermediário)", "Vue", "Ruby on Rails", "Go", "IoT (MQTT, RTSP)", "IA: LLMs e agentes (Claude Code)"],
         },
       ],
     },
