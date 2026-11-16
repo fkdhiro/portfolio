@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   // Fully static site → plain HTML/CSS/JS in `out/` (Netlify, any static host).
   output: "export",
   images: {

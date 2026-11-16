@@ -1,4 +1,5 @@
 import { Download } from "lucide-react";
+import { withBase } from "@/lib/basePath";
 import type { Contact as ContactType } from "@/types/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow, SectionMarkerLine } from "@/components/ui/SectionHeading";
@@ -52,7 +53,7 @@ export function Contact({ contact }: { contact: ContactType }) {
           />
           <div className="flex flex-col items-center gap-3">
             <a
-              href={contact.cv.href}
+              href={withBase(contact.cv.href)}
               download
               type="application/pdf"
               className="inline-flex min-w-[16rem] items-center justify-center gap-3 border border-line-strong px-6 py-4 text-[14px] font-semibold tracking-[-0.005em] text-ink transition-colors hover:border-red hover:text-red"
@@ -61,7 +62,7 @@ export function Contact({ contact }: { contact: ContactType }) {
               <span>{contact.cv.label}</span>
             </a>
             <a
-              href={contact.cv.alternate.href}
+              href={withBase(contact.cv.alternate.href)}
               hrefLang={contact.cv.alternate.lang}
               lang={contact.cv.alternate.lang}
               download
