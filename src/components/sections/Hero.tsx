@@ -6,7 +6,7 @@ import type { HeroCard, Profile } from "@/types/portfolio";
 import { HeroWordmark } from "./HeroWordmark";
 import { PortraitPanel } from "./PortraitPanel";
 
-function TechCard({ card }: { card: HeroCard }) {
+function TechCard({ card, techLabel }: { card: HeroCard; techLabel: string }) {
   return (
     <article
       data-cursor-target="card"
@@ -15,7 +15,7 @@ function TechCard({ card }: { card: HeroCard }) {
     >
       <div className="flex items-center justify-between gap-3">
         <span className="font-mono text-[12px] font-medium text-red">{card.index}</span>
-        <ul className="flex flex-wrap justify-end gap-1.5" aria-label="Tecnologias">
+        <ul className="flex flex-wrap justify-end gap-1.5" aria-label={techLabel}>
           {card.chips.map((chip, i) => (
             <li
               key={chip}
@@ -113,7 +113,7 @@ export function Hero({ profile }: { profile: Profile }) {
           <div className="grid gap-3 md:col-span-2 md:grid-cols-3 xl:col-span-1 xl:grid-cols-1 xl:content-start xl:pt-[clamp(0px,5.8vw,84px)]">
             {profile.heroCards.map((card, i) => (
               <Reveal intro key={card.index} delay={HERO_REVEAL.cards + i * HERO_REVEAL.cardStep} y={14} className="h-full">
-                <TechCard card={card} />
+                <TechCard card={card} techLabel={profile.techLabel} />
               </Reveal>
             ))}
           </div>

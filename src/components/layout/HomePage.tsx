@@ -5,18 +5,18 @@ import { Contact } from "@/components/sections/Contact";
 import { Flagships } from "@/components/sections/Flagships";
 import { Hero } from "@/components/sections/Hero";
 import { SystemsMatrix } from "@/components/sections/SystemsMatrix";
-import { portfolio } from "@/data/portfolio";
+import type { Portfolio } from "@/types/portfolio";
 
-export default function Home() {
+export function HomePage({ portfolio }: { portfolio: Portfolio }) {
   return (
     <>
       <a
         href="#main"
         className="micro sr-only z-[60] bg-red px-3 py-2 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
-        Pular para o conteúdo
+        {portfolio.site.ui.skipLink}
       </a>
-      <Header nav={portfolio.nav} wordmark={portfolio.profile.wordmark} status={portfolio.profile.status} />
+      <Header nav={portfolio.nav} wordmark={portfolio.profile.wordmark} status={portfolio.profile.status} ui={portfolio.site.ui} />
       <main id="main">
         <Hero profile={portfolio.profile} />
         <About about={portfolio.about} />

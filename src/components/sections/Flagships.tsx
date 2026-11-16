@@ -54,7 +54,7 @@ export function Flagships({ flagships }: { flagships: FlagshipsType }) {
                 <span className="h-2 w-2 bg-red" aria-hidden="true" />
                 {flagship.stackLabel}
               </p>
-              <LayerTabs layers={flagship.layers} label={flagship.stackLabel} />
+              <LayerTabs layers={flagship.layers} label={flagship.stackLabel} tagsLabel={flagship.tagsLabel} />
               <p className="mt-8 border-t border-line pt-4 font-mono text-[11px] leading-relaxed text-dim">
                 {flagship.stackNote}
               </p>

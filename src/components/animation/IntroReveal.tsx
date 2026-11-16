@@ -26,17 +26,17 @@ setTimeout(function(){if(!window.__revealReady){d.classList.remove('js','intro-a
  * The near-black curtain + scan HUD. Rendered in the server HTML but hidden by
  * CSS unless `html.intro-armed` is set; the cursor engine animates it away.
  */
-export function IntroCurtain() {
+export function IntroCurtain({ intro }: { intro: { scan: string; agents: string; targets: string } }) {
   return (
     <div id="intro-curtain" aria-hidden="true" className="intro-curtain">
       <div className="intro-scanline" />
       <p className="intro-hud micro">
         <span className="intro-hud-dot" />
-        <span>Escaneando interface</span>
+        <span>{intro.scan}</span>
         <span className="hidden text-[#2b6f86] sm:inline">/</span>
-        <span data-hud="agents" className="hidden sm:inline">00 agentes</span>
+        <span data-hud="agents" className="hidden sm:inline">{`00 ${intro.agents}`}</span>
         <span className="text-[#2b6f86]">/</span>
-        <span data-hud="targets">00 alvos</span>
+        <span data-hud="targets">{`00 ${intro.targets}`}</span>
       </p>
     </div>
   );

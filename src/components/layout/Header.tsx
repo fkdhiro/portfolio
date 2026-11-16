@@ -3,12 +3,14 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useIndicator } from "@/components/ui/useIndicator";
-import type { NavItem, Profile } from "@/types/portfolio";
+import { withBase } from "@/lib/basePath";
+import type { NavItem, Profile, SiteUi } from "@/types/portfolio";
 
 type HeaderProps = {
   nav: NavItem[];
   wordmark: string;
   status: Profile["status"];
+  ui: SiteUi;
 };
 
 function useActiveSection(ids: string[]) {
@@ -35,7 +37,31 @@ function useActiveSection(ids: string[]) {
   return active;
 }
 
-export function Header({ nav, wordmark, status }: HeaderProps) {
+function LanguageSwitch({ language, className = "" }: { language: SiteUi["language"]; className?: string }) {
+  const { current, alternate } = language;
+  return (
+    <p className={`micro flex items-center gap-1.5 text-[10px] ${className}`} aria-label={language.label}>
+      <span className="text-ink" lang={current.lang} aria-current="true">
+        {current.code}
+      </span>
+      <span className="text-dim" aria-hidden="true">
+        /
+      </span>
+      <a
+        href={withBase(alternate.href)}
+        hrefLang={alternate.lang}
+        lang={alternate.lang}
+        title={alternate.title}
+        aria-label={alternate.title}
+        className="px-1 py-3 text-mute transition-colors duration-200 hover:text-ink"
+      >
+        {alternate.code}
+      </a>
+    </p>
+  );
+}
+
+export function Header({ nav, wordmark, status, ui }: HeaderProps) {
   const [ids] = useState(() => nav.map((item) => item.id));
   const active = useActiveSection(ids);
   const [open, setOpen] = useState(false);
@@ -67,7 +93,7 @@ export function Header({ nav, wordmark, status }: HeaderProps) {
       {/* Backdrop blur only from md up: it is costly to repaint while scrolling on phones. */}
       <div className="mx-auto max-w-[1040px] border border-line bg-bg/95 md:bg-bg/80 md:backdrop-blur-md">
         <div className="flex h-11 items-center justify-between gap-6 pl-4 pr-2 md:pr-4">
-          <a href="#top" className="group flex h-11 items-center gap-2.5" aria-label={`${wordmark} — voltar ao topo`}>
+          <a href="#top" className="group flex h-11 items-center gap-2.5" aria-label={`${wordmark} — ${ui.backToTop}`}>
             <span
               className="block h-2.5 w-2.5 bg-red transition-transform duration-300 group-hover:rotate-45"
               aria-hidden="true"
@@ -75,7 +101,7 @@ export function Header({ nav, wordmark, status }: HeaderProps) {
             <span className="text-[15px] font-extrabold tracking-[-0.02em] text-ink">{wordmark}</span>
           </a>
 
-          <nav aria-label="Principal" className="hidden md:block">
+          <nav aria-label={ui.navLabel} className="hidden md:block">
             <ul ref={navList} className="relative flex items-center gap-1">
               <span
                 ref={underline}
@@ -102,6 +128,8 @@ export function Header({ nav, wordmark, status }: HeaderProps) {
             </ul>
           </nav>
 
+          <LanguageSwitch language={ui.language} className="hidden md:flex" />
+
           <p className="micro hidden items-center gap-2 text-[10px] text-mute lg:flex">
             <span className="status-dot" aria-hidden="true" />
             <span className="text-ink">{status.label}</span>
@@ -115,7 +143,7 @@ export function Header({ nav, wordmark, status }: HeaderProps) {
             className="-mr-1 flex h-11 w-11 items-center justify-center text-ink md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-label={open ? ui.closeMenu : ui.openMenu}
             onClick={() => setOpen((value) => !value)}
           >
             {open ? <X size={18} strokeWidth={1.75} /> : <Menu size={18} strokeWidth={1.75} />}
@@ -126,7 +154,7 @@ export function Header({ nav, wordmark, status }: HeaderProps) {
             `inert` + visibility keep it out of reach while closed. */}
         <nav
           id="mobile-nav"
-          aria-label="Principal"
+          aria-label={ui.navLabel}
           inert={!open}
           className={`grid transition-[grid-template-rows,opacity,visibility] duration-300 ease-[cubic-bezier(.22,1,.36,1)] md:hidden ${
             open ? "visible grid-rows-[1fr] opacity-100" : "invisible grid-rows-[0fr] opacity-0"
@@ -151,6 +179,7 @@ export function Header({ nav, wordmark, status }: HeaderProps) {
                   </li>
                 ))}
               </ul>
+              <LanguageSwitch language={ui.language} className="border-t border-line px-4 py-1" />
               <p className="micro flex items-center gap-2 border-t border-line px-4 py-3 text-[10px] text-mute">
                 <span className="status-dot" aria-hidden="true" />
                 <span className="text-ink">{status.label}</span>

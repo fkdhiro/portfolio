@@ -76,7 +76,7 @@ export function Contact({ contact }: { contact: ContactType }) {
 
         {socials.length > 0 ? (
           <Reveal delay={0.25}>
-            <ul className="mt-14 flex items-center justify-center gap-2" aria-label="Perfis sociais">
+            <ul className="mt-14 flex items-center justify-center gap-2" aria-label={contact.socialsLabel}>
               {socials.map((social) => (
                 <li key={social.platform}>
                   <a

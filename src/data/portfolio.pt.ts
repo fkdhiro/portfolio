@@ -15,13 +15,29 @@ import type { Portfolio } from "@/types/portfolio";
  *  - Portrait: real photo (assets/portrait-source.png → `npm run images`).
  * ─────────────────────────────────────────────────────────────────────────────
  */
-export const portfolio: Portfolio = {
+export const portfolioPt: Portfolio = {
   site: {
     title:
       "Willian Hiroshi | Desenvolvedor Full Stack · Engenheiro de Software · Node.js · NestJS · TypeScript · React",
     description:
       "Desenvolvedor Full Stack e Engenheiro de Software com 5 anos de experiência: Node.js, NestJS, TypeScript, JavaScript e React em plataformas de iGaming com milhões de usuários.",
     lang: "pt-BR",
+    locale: "pt_BR",
+    path: "/",
+    ogAlt: "Willian Hiroshi — Desenvolvedor Full Stack · Engenheiro de Software",
+    ui: {
+      intro: { scan: "Escaneando interface", agents: "agentes", targets: "alvos" },
+      skipLink: "Pular para o conteúdo",
+      navLabel: "Principal",
+      backToTop: "voltar ao topo",
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
+      language: {
+        label: "Idioma",
+        current: { code: "PT", lang: "pt-BR" },
+        alternate: { code: "EN", lang: "en", href: "/en/", title: "Read in English" },
+      },
+    },
     person: {
       name: "Willian Hiroshi Fukuda",
       alternateName: ["Willian Fukuda", "Hiroshi"],
@@ -47,6 +63,7 @@ export const portfolio: Portfolio = {
     greeting: "Olá, eu sou",
     name: "HIROSHI.",
     headline: "Engenheiro de Software Full Stack",
+    techLabel: "Tecnologias",
     microheadline: "Full Stack // Node.js · NestJS // TypeScript · React",
     intro:
       "Engenheiro full stack com 5 anos de experiência em desenvolvimento, os últimos em plataformas de iGaming com milhões de usuários. Atuo de ponta a ponta: arquitetura e backend em Node.js/NestJS e TypeScript, interfaces em React/Next.js e entrega em containers na AWS.",
@@ -87,7 +104,7 @@ export const portfolio: Portfolio = {
   },
 
   about: {
-    marker: { code: "//01.00", name: "SEC_SOBRE", position: "01/05" },
+    marker: { code: "//01.00", name: "SEC_SOBRE", position: "01/05", indexLabel: "ÍNDICE" },
     eyebrow: "Perfil de engenharia",
     title: "Trajetória e Filosofia",
     paragraphs: [
@@ -115,6 +132,7 @@ export const portfolio: Portfolio = {
       },
     ],
     experience: {
+      educationLabel: "Formação",
       eyebrow: "Carreira",
       title: "Experiência profissional",
       items: [
@@ -221,7 +239,7 @@ export const portfolio: Portfolio = {
   },
 
   flagships: {
-    marker: { code: "//02.00", name: "SEC_PROJETOS", position: "02/05" },
+    marker: { code: "//02.00", name: "SEC_PROJETOS", position: "02/05", indexLabel: "ÍNDICE" },
     eyebrow: "Vitrine de arquitetura",
     title: "Projetos em destaque",
     description:
@@ -239,6 +257,7 @@ export const portfolio: Portfolio = {
         { value: "Multi", label: "Tenant / white-label" },
       ],
       stackLabel: "Capacidades da plataforma",
+      tagsLabel: "Etiquetas",
       stackNote:
         "As camadas descrevem capacidades funcionais da plataforma, não necessariamente serviços independentes.",
       layers: [
@@ -357,11 +376,12 @@ export const portfolio: Portfolio = {
   },
 
   matrix: {
-    marker: { code: "//03.00", name: "SEC_SISTEMAS", position: "03/05" },
+    marker: { code: "//03.00", name: "SEC_SISTEMAS", position: "03/05", indexLabel: "ÍNDICE" },
     eyebrow: "Índice de engenharia",
     title: "Matriz de Sistemas",
     description:
       "Sistemas da experiência profissional e projetos próprios — cada um com seu contexto real.",
+    filterLabel: "Filtrar sistemas por área",
     allLabel: "Todos os sistemas",
     categories: [
       { id: "distributed", label: "Sistemas distribuídos" },
@@ -438,13 +458,14 @@ export const portfolio: Portfolio = {
   },
 
   contact: {
-    marker: { code: "//04.00", name: "SEC_CONTATO", position: "04/05" },
+    marker: { code: "//04.00", name: "SEC_CONTATO", position: "04/05", indexLabel: "ÍNDICE" },
     eyebrow: "Contato direto",
     headline: ["Vamos construir", "algo extraordinário."],
     body: "Aberto a vagas full stack, backend ou frontend, em regime remoto. Respondo por e-mail ou LinkedIn.",
     email: "w.hiroshi.fkd@gmail.com",
     copyLabel: "Copiar e-mail",
     copiedLabel: "Copiado!",
+    socialsLabel: "Perfis sociais",
     copyErrorLabel: "Falha ao copiar — selecione o endereço",
     cv: {
       label: "Baixar CV (PDF)",

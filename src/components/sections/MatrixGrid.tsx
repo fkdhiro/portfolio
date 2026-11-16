@@ -46,7 +46,7 @@ export function MatrixGrid({ matrix }: { matrix: Matrix }) {
     <div>
       <div
         role="group"
-        aria-label="Filtrar sistemas por área"
+        aria-label={matrix.filterLabel}
         className="no-scrollbar scroll-fade -mx-4 flex gap-1 overflow-x-auto pl-4 md:mx-0 md:flex-wrap md:pl-0"
       >
         {filters.map((f) => {

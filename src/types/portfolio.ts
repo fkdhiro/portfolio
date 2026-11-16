@@ -30,6 +30,8 @@ export type Profile = {
   name: string;
   headline: string;
   microheadline: string;
+  /** aria-label da lista de chips dos cartões. */
+  techLabel: string;
   intro: string;
   status: { label: string; detail: string };
   primaryCta: { label: string; href: string };
@@ -43,6 +45,8 @@ export type SectionMarker = {
   code: string;
   name: string;
   position: string;
+  /** Rótulo "ÍNDICE" / "INDEX" exibido ao lado da posição. */
+  indexLabel: string;
 };
 
 export type Principle = {
@@ -78,6 +82,7 @@ export type About = {
   quote: string;
   principles: Principle[];
   experience: {
+    educationLabel: string;
     eyebrow: string;
     title: string;
     items: Experience[];
@@ -108,6 +113,7 @@ export type FlagshipProject = {
   metrics: Metric[];
   stackLabel: string;
   stackNote: string;
+  tagsLabel: string;
   layers: Layer[];
 };
 
@@ -148,6 +154,7 @@ export type Matrix = {
   title: string;
   description: string;
   allLabel: string;
+  filterLabel: string;
   categories: MatrixCategory[];
   systems: MatrixSystem[];
 };
@@ -170,6 +177,7 @@ export type Contact = {
   copyLabel: string;
   copiedLabel: string;
   copyErrorLabel: string;
+  socialsLabel: string;
   /** Web CV (no phone number), served from public/cv. */
   cv: CvDownload;
   socials: SocialLink[];
@@ -199,10 +207,35 @@ export type SitePerson = {
   knowsLanguage: string[];
 };
 
+export type SiteUi = {
+  skipLink: string;
+  navLabel: string;
+  /** Texto após o wordmark no aria-label do logo. */
+  backToTop: string;
+  openMenu: string;
+  closeMenu: string;
+  /** Rótulos do HUD da intro (ex.: "agentes" em "12 agentes"). */
+  intro: { scan: string; agents: string; targets: string };
+  language: {
+    label: string;
+    /** Idioma atual (não é link). */
+    current: { code: string; lang: string };
+    /** Outra versão do site. `href` é caminho do site (recebe basePath). */
+    alternate: { code: string; lang: string; href: string; title: string };
+  };
+};
+
 export type Site = {
   title: string;
   description: string;
   lang: string;
+  /** Locale Open Graph (pt_BR, en_US). */
+  locale: string;
+  /** Caminho canônico desta versão ("/" ou "/en/"). */
+  path: string;
+  /** Alt da imagem Open Graph. */
+  ogAlt: string;
+  ui: SiteUi;
   person: SitePerson;
 };
 

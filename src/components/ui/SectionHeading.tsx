@@ -17,7 +17,7 @@ export function SectionMarkerLine({ marker }: { marker: SectionMarker }) {
       <span>{marker.name}</span>
       <span className="h-px flex-1 bg-line" />
       <span>
-        <span className="hidden sm:inline">ÍNDICE </span>
+        <span className="hidden sm:inline">{`${marker.indexLabel} `}</span>
         <span className="text-mute">[{marker.position}]</span>
       </span>
     </div>

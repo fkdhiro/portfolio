@@ -5,7 +5,7 @@ import type { Layer } from "@/types/portfolio";
 import { TechBadge } from "@/components/ui/TechBadge";
 import { useIndicator } from "@/components/ui/useIndicator";
 
-export function LayerTabs({ layers, label }: { layers: Layer[]; label: string }) {
+export function LayerTabs({ layers, label, tagsLabel }: { layers: Layer[]; label: string; tagsLabel: string }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const tablist = useRef<HTMLDivElement>(null);
@@ -122,7 +122,7 @@ export function LayerTabs({ layers, label }: { layers: Layer[]; label: string })
                     </div>
                   ))}
                 </dl>
-                <ul className="flex flex-wrap gap-2" aria-label="Etiquetas">
+                <ul className="flex flex-wrap gap-2" aria-label={tagsLabel}>
                   {layer.tags.map((tag) => (
                     <li key={tag}>
                       <TechBadge tone="red">{tag}</TechBadge>

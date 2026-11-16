@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   // Fully static site → plain HTML/CSS/JS in `out/` (Netlify, any static host).
   output: "export",
+  // /en/ → en/index.html (GitHub Pages serve /en/ só como pasta).
+  trailingSlash: true,
   images: {
     // No image server in a static export: pre-generated widths (npm run images).
     loader: "custom",

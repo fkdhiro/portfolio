@@ -65,7 +65,7 @@ export function About({ about }: { about: AboutType }) {
               <SubHeading eyebrow={experience.eyebrow} title={experience.title} id="experience-title" />
               <Reveal delay={0.1}>
                 <div data-cursor-target="education" className="border border-line bg-surface p-5">
-                  <p className="micro text-[10px] text-dim">Formação</p>
+                  <p className="micro text-[10px] text-dim">{experience.educationLabel}</p>
                   <ul className="flex flex-col">
                     {experience.education.map((edu, i) => (
                       <li key={edu.course} className={i > 0 ? "mt-4 border-t border-line pt-4" : "mt-2"}>

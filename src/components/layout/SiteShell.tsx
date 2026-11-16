@@ -1,11 +1,10 @@
-import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Anton, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { CursorOrchestra } from "@/components/animation/CursorOrchestra";
 import { IntroCurtain, introBootScript } from "@/components/animation/IntroReveal";
 import { RevealObserver } from "@/components/ui/RevealObserver";
-import { portfolio } from "@/data/portfolio";
 import { siteUrl } from "@/lib/siteUrl";
-import "./globals.css";
+import type { Portfolio } from "@/types/portfolio";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,46 +34,15 @@ const instrumentSerif = Instrument_Serif({
   style: "italic",
   preload: false,
 });
-
-const ogImage = {
-  // PNG 1200×630: the size/format LinkedIn, WhatsApp and X previews expect.
-  url: "/images/og.png",
-  width: 1200,
-  height: 630,
-  type: "image/png",
-  alt: `${portfolio.profile.fullName} — Desenvolvedor Full Stack · Engenheiro de Software`,
-};
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: portfolio.site.title,
-  description: portfolio.site.description,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "profile",
-    url: "/",
-    siteName: portfolio.profile.fullName,
-    title: portfolio.site.title,
-    description: portfolio.site.description,
-    locale: "pt_BR",
-    images: [ogImage],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: portfolio.site.title,
-    description: portfolio.site.description,
-    images: [ogImage.url],
-  },
-};
-
-const person = portfolio.site.person;
-const personJsonLd = {
+function personJsonLd(portfolio: Portfolio) {
+  const person = portfolio.site.person;
+  return {
   "@context": "https://schema.org",
   "@type": "Person",
   name: person.name,
   alternateName: person.alternateName,
   jobTitle: person.jobTitle,
-  url: `${siteUrl}/`,
+  url: `${siteUrl}${portfolio.site.path}`,
   // Privacy: no e-mail nor city in machine-readable data; contact via sameAs.
   address: { "@type": "PostalAddress", addressCountry: person.country },
   sameAs: person.sameAs,
@@ -82,13 +50,9 @@ const personJsonLd = {
   knowsAbout: person.knowsAbout,
   knowsLanguage: person.knowsLanguage,
 };
+}
 
-export const viewport: Viewport = {
-  themeColor: "#09080b",
-  colorScheme: "dark",
-};
-
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export function SiteShell({ portfolio, children }: { portfolio: Portfolio; children: ReactNode }) {
   return (
     <html
       lang={portfolio.site.lang}
@@ -101,12 +65,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           // JSON.stringify output from static data; "<" escaped to keep the tag closed.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(portfolio)).replace(/</g, "\\u003c") }}
         />
       </head>
       <body>
         {children}
-        <IntroCurtain />
+        <IntroCurtain intro={portfolio.site.ui.intro} />
         <CursorOrchestra />
         <RevealObserver />
       </body>

@@ -279,6 +279,11 @@ export function createCursorEngine(opts: EngineOptions) {
   let introBoxCount = 0;
   const hudTargets = curtain?.querySelector<HTMLElement>("[data-hud='targets']") ?? null;
   const hudAgents = curtain?.querySelector<HTMLElement>("[data-hud='agents']") ?? null;
+  // Rótulos localizados vêm do HTML ("00 agentes" → "agentes").
+  const hudWord = (el: HTMLElement | null, fallback: string) =>
+    el?.textContent?.replace(/^[\d/\s]+/, "").trim() || fallback;
+  const agentsWord = hudWord(hudAgents, "agents");
+  const targetsWord = hudWord(hudTargets, "targets");
   let introTargetTotal = 0;
   const inspectedAt = new Map<Element, number>();
 
@@ -338,7 +343,7 @@ export function createCursorEngine(opts: EngineOptions) {
     }
     if (mode === "intro" && hudTargets) {
       introBoxCount += 1;
-      hudTargets.textContent = `${String(introBoxCount).padStart(2, "0")}/${String(introTargetTotal).padStart(2, "0")} alvos`;
+      hudTargets.textContent = `${String(introBoxCount).padStart(2, "0")}/${String(introTargetTotal).padStart(2, "0")} ${targetsWord}`;
     }
   };
 
@@ -426,7 +431,7 @@ export function createCursorEngine(opts: EngineOptions) {
       a.group = i % groupCount;
       members[a.group].push(a);
     });
-    if (hudAgents) hudAgents.textContent = `${agents.length} agentes`;
+    if (hudAgents) hudAgents.textContent = `${agents.length} ${agentsWord}`;
 
     // Formation offsets (+ 1–2 stragglers per group that drift out and back).
     const offsets = new Map<Agent, Vec>();
@@ -481,7 +486,7 @@ export function createCursorEngine(opts: EngineOptions) {
 
     // Phase B — scan the real hero elements (boxes match their rects).
     introTargetTotal = scan.length;
-    if (hudTargets) hudTargets.textContent = `00/${String(scan.length).padStart(2, "0")} alvos`;
+    if (hudTargets) hudTargets.textContent = `00/${String(scan.length).padStart(2, "0")} ${targetsWord}`;
     const lastScanOf = new Map<number, number>();
     scan.forEach(({ el }, j) => {
       const g = j % groupCount;
