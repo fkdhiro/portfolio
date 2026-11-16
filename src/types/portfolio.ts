@@ -155,6 +155,9 @@ export type Matrix = {
   description: string;
   allLabel: string;
   filterLabel: string;
+  /** Anúncio sr-only: contagem exibida (singular/plural). */
+  shownOne: string;
+  shownMany: string;
   categories: MatrixCategory[];
   systems: MatrixSystem[];
 };

@@ -382,6 +382,8 @@ export const portfolioPt: Portfolio = {
     description:
       "Sistemas da experiência profissional e projetos próprios — cada um com seu contexto real.",
     filterLabel: "Filtrar sistemas por área",
+    shownOne: "sistema exibido",
+    shownMany: "sistemas exibidos",
     allLabel: "Todos os sistemas",
     categories: [
       { id: "distributed", label: "Sistemas distribuídos" },

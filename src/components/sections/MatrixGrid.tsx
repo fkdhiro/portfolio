@@ -81,7 +81,7 @@ export function MatrixGrid({ matrix }: { matrix: Matrix }) {
       </div>
 
       <p className="sr-only" aria-live="polite">
-        {`${visible.length} ${visible.length === 1 ? "sistema exibido" : "sistemas exibidos"} — ${activeLabel}`}
+        {`${visible.length} ${visible.length === 1 ? matrix.shownOne : matrix.shownMany} — ${activeLabel}`}
       </p>
 
       <ul className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">

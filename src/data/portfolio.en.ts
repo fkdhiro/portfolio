@@ -382,6 +382,8 @@ export const portfolioEn: Portfolio = {
     description:
       "Systems from my professional experience and personal projects, each with its real context.",
     filterLabel: "Filter systems by area",
+    shownOne: "system shown",
+    shownMany: "systems shown",
     allLabel: "All systems",
     categories: [
       { id: "distributed", label: "Distributed systems" },
