@@ -238,6 +238,8 @@ export type Site = {
   path: string;
   /** Alt da imagem Open Graph. */
   ogAlt: string;
+  /** Imagem Open Graph (PNG 1200×630) no idioma desta versão. */
+  ogImage: string;
   ui: SiteUi;
   person: SitePerson;
 };

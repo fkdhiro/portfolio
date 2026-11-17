@@ -25,6 +25,7 @@ export const portfolioPt: Portfolio = {
     locale: "pt_BR",
     path: "/",
     ogAlt: "Willian Hiroshi — Desenvolvedor Full Stack · Engenheiro de Software",
+    ogImage: "/images/og.png",
     ui: {
       intro: { scan: "Escaneando interface", agents: "agentes", targets: "alvos" },
       skipLink: "Pular para o conteúdo",

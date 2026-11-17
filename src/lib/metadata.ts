@@ -9,7 +9,7 @@ export function buildMetadata(portfolio: Portfolio): Metadata {
   const { site, profile } = portfolio;
   const ogImage = {
     // PNG 1200×630: the size/format LinkedIn, WhatsApp and X previews expect.
-    url: "/images/og.png",
+    url: site.ogImage,
     width: 1200,
     height: 630,
     type: "image/png",
@@ -24,7 +24,8 @@ export function buildMetadata(portfolio: Portfolio): Metadata {
       languages: {
         [portfolioPt.site.lang]: portfolioPt.site.path,
         [portfolioEn.site.lang]: portfolioEn.site.path,
-        "x-default": portfolioPt.site.path,
+        // x-default = EN: the LinkedIn profile is primarily in English.
+        "x-default": portfolioEn.site.path,
       },
     },
     openGraph: {
